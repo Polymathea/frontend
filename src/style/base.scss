@@ -1,2 +1,7 @@
 @import "./settings.scss";
 @import "~/bulma/bulma.sass";
+
+body {
+    min-height: 100vh;
+    position: relative;
+}

@@ -7,9 +7,8 @@ const app = createApp(HomePage);
 // fontawesome icons
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-//import { faHeart } from "@fortawesome/free-solid-svg-icons"; // import only required icon
-//library.add(faHeart); // add imported icon(s) to library
-library.add();
+import { faHeart } from "@fortawesome/free-solid-svg-icons"; // import only required icon
+library.add(faHeart); // add imported icon(s) to library
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
