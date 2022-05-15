@@ -10,9 +10,15 @@ export default defineComponent({});
 
 <template>
   <Template>
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <!-- Hero -->
+    <section class="hero is-fullheight-with-navbar is-primary">
+      <div class="hero-body">
+        <div>
+          <p class="title">Polymathée</p>
+          <p class="subtitle">Solution d'apprentissage</p>
+        </div>
+      </div>
+    </section>
   </Template>
 </template>
 
