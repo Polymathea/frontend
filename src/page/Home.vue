@@ -13,6 +13,26 @@ const team = [
 		role: "AutreRole",
 		desc: "Moi je préfère être seul",
 	},
+	{
+		name: "Nom",
+		role: "Role",
+		desc: "Je me présente, je m'appele Henri. J'voudrais bien réussir ma vie, être aimé...",
+	},
+	{
+		name: "Nom2",
+		role: "AutreRole",
+		desc: "Moi je préfère être seul",
+	},
+	{
+		name: "Nom",
+		role: "Role",
+		desc: "Je me présente, je m'appele Henri. J'voudrais bien réussir ma vie, être aimé...",
+	},
+	{
+		name: "Nom2",
+		role: "AutreRole",
+		desc: "Moi je préfère être seul",
+	},
 ];
 </script>
 
@@ -43,6 +63,7 @@ export default defineComponent({});
       </section>-->
 
 	<!-- Présentation de l'équipe -->
+	<!-- TODO: faire un carrousel -->
 	<section id="team" class="section columns">
 		<div
 			class="column is-flex is-two-fifths"
@@ -50,7 +71,7 @@ export default defineComponent({});
 			:key="idx"
 		>
 			<TeamMember
-				:names="member.name"
+				:name="member.name"
 				:role="member.role"
 				:desc="member.desc"
 			/>
@@ -58,4 +79,8 @@ export default defineComponent({});
 	</section>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+#team {
+	overflow-x: scroll;
+}
+</style>
