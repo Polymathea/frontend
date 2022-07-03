@@ -8,6 +8,7 @@ export default defineComponent({
 		name: String,
 		role: String,
 		desc: String,
+		pp: String,
 	},
 });
 </script>
@@ -27,10 +28,7 @@ export default defineComponent({
 				<div class="media-left">
 					<!-- à changer: pp -->
 					<figure class="image is-48x48">
-						<img
-							src="https://bulma.io/images/placeholders/96x96.png"
-							alt="Placeholder image"
-						/>
+						<img :src="pp" alt="Placeholder image" />
 					</figure>
 				</div>
 				<div class="media-content">
