@@ -64,17 +64,20 @@ export default defineComponent({});
 
 	<!-- Présentation de l'équipe -->
 	<!-- TODO: faire un carrousel -->
-	<section id="team" class="section columns">
-		<div
-			class="column is-flex is-two-fifths"
-			v-for="(member, idx) in team"
-			:key="idx"
-		>
-			<TeamMember
-				:name="member.name"
-				:role="member.role"
-				:desc="member.desc"
-			/>
+	<section id="team" class="section">
+		<div class="title">Qui sommes-nous?</div>
+		<div class="columns">
+			<div
+				class="column is-flex is-two-fifths"
+				v-for="(member, idx) in team"
+				:key="idx"
+			>
+				<TeamMember
+					:name="member.name"
+					:role="member.role"
+					:desc="member.desc"
+				/>
+			</div>
 		</div>
 	</section>
 </template>
