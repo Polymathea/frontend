@@ -24,6 +24,20 @@ $blue: hsl(229, 53%, 53%);
 $purple: hsl(271, 100%, 71%);
 $red: hsl(348, 86%, 61%);
 
+// palette
+$white: #FFFCF9;
+$black: #042A2B;
+$teal: #00ED4D;
+$green: #22D059;
+$blue: #4C9CF7;
+$indigo: #57467F;
+$pink: #EF476F;
+$purple: #622B93;
+$red: #F02252;
+$yellow: #FFA90B;
+$orange: #CB4005;
+//
+
 $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-monospace: monospace;
 
@@ -74,6 +88,12 @@ $warning: $yellow;
 $danger: $red;
 $light: $white-ter;
 $dark: $grey-darker;
+
+// palette
+$primary: $yellow;
+$info: $blue;
+$warning: $orange;
+//
 
 $orange-invert: findColorInvert($orange);
 $yellow-invert: findColorInvert($yellow);

@@ -1,22 +1,22 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({});
 </script>
 
 <template>
-  <a href="/">
-    <img class="site-logo" src="https://bulma.io/images/bulma-logo.png" />
-  </a>
+	<router-link to="/">
+		<img class="site-logo" src="/img/logo.png" alt="Polymathea logo" />
+	</router-link>
 </template>
 
 <style lang="scss">
 @import "@/style/settings.scss";
 .site-logo {
-  transition: transform 0.2s $easing;
+	transition: transform 0.2s $easing;
 }
 
 .site-logo:hover {
-  transform: scale(1.2);
+	transform: scale(1.3);
 }
 </style>
