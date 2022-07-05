@@ -17,7 +17,7 @@ Les fichiers sont exportés dans le dossier `dist`
 ```sh
 npm run preview
 ```
-Serveur accessible à 'localhost:5050' par défaut.
+Serveur accessible à `localhost:5050` par défaut.
 
 ### Serveur de développement:
 ```sh
