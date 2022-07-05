@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { defineComponent } from "vue";
-
-import Logo from "./SiteLogo.vue";
+import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 </script>
 
 <script lang="ts">
@@ -9,6 +7,9 @@ export default defineComponent({
 	data: () => ({
 		displayMenu: false,
 	}),
+	components: {
+		Logo: defineAsyncComponent(() => import("./SiteLogo.vue")),
+	},
 });
 </script>
 

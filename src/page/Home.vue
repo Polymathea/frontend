@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { defineComponent } from "vue";
+import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 
-import { faker } from "@faker-js/faker";
-
-import TeamMember from "@/components/TeamMember.vue";
+const { faker } = await import("@faker-js/faker");
 
 faker.setLocale("fr");
 
@@ -18,7 +16,13 @@ const team = Array.from(Array(5)).map(() => {
 </script>
 
 <script lang="ts">
-export default defineComponent({});
+export default defineComponent({
+	components: {
+		TeamMember: defineAsyncComponent(
+			() => import("@/components/TeamMember.vue")
+		),
+	},
+});
 </script>
 
 <template>
@@ -58,10 +62,7 @@ export default defineComponent({});
 		<div class="box columns is-8">
 			<div class="column is-one-fifth is-flex is-flex-direction-column">
 				<div class="title">Prix</div>
-				<div
-					class="block"
-					v-html="faker.commerce.price(0, 100, 2, '€')"
-				></div>
+				<div class="block" v-html="100"></div>
 			</div>
 			<div class="column is-flex is-flex-direction-column">
 				<div
