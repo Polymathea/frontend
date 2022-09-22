@@ -1,6 +1,6 @@
 // vue bootstrap function
 import { createApp, defineAsyncComponent } from "vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const Main = defineAsyncComponent(() => import("@/Main.vue"));
 
@@ -22,20 +22,15 @@ const FontAwesomeIcon = () => import("@fortawesome/vue-fontawesome");
 app.component("font-awesome-icon", FontAwesomeIcon); // register fontawesome component
 
 const router = createRouter({
-	history: createWebHistory(),
+	history: createWebHashHistory(),
 	routes: [
 		{
 			path: "/",
 			name: "Home",
 			component: () => import("@/page/Home.vue"),
 		},
-		{
-			path: "/test",
-			name: "Test",
-			component: () => import("@/page/Test.vue"),
-		},
 	],
-	scrollBehavior: function (to) {
+	scrollBehavior(to) {
 		if (to.hash) {
 			return { el: to.hash };
 		}
