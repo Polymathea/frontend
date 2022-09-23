@@ -29,6 +29,11 @@ const router = createRouter({
 			name: "Home",
 			component: () => import("@/page/Home.vue"),
 		},
+		{
+			path: "/profile",
+			name: "Profile",
+			component: () => import("@/page/Profile.vue"),
+		},
 	],
 	scrollBehavior(to) {
 		if (to.hash) {
@@ -38,5 +43,11 @@ const router = createRouter({
 });
 
 app.use(router);
+
+const { faker } = await import("@faker-js/faker");
+
+faker.setLocale("fr");
+
+app.provide("faker", faker);
 
 app.mount("#app"); // bootstrap vue

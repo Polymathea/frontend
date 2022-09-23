@@ -60,10 +60,22 @@ export default defineComponent({
 								placeholder="1234"
 							/>
 						</div>
+						<div
+							class="is-flex flex-direction-row is-justify-content-flex-end"
+						>
+							<a class="tag is-warning is-light"
+								>Mot de passe oublié?</a
+							>
+						</div>
 					</form>
 				</section>
 				<footer class="modal-card-foot">
-					<button class="button is-primary">Save changes</button>
+					<router-link
+						to="/profile"
+						@click="setDisplayLoginModal(false)"
+						class="button is-primary"
+						>Save changes</router-link
+					>
 					<button class="button">Cancel</button>
 				</footer>
 			</div>

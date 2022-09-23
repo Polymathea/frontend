@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<Suspense> <Navbar /></Suspense>
+	<Suspense><Navbar /></Suspense>
 	<Suspense><router-view /></Suspense>
 	<Suspense><Footer /></Suspense>
 </template>

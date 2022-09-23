@@ -1,22 +1,8 @@
-<script setup lang="ts">
-const { faker } = await import("@faker-js/faker");
-
-faker.setLocale("fr");
-
-const team = Array.from(Array(5)).map(() => {
-	return {
-		name: faker.name.firstName(),
-		role: faker.name.jobTitle(),
-		desc: faker.lorem.paragraph(),
-		pp: faker.image.people(96, 96, true),
-	};
-});
-</script>
-
 <script lang="ts">
 import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
+	inject: ["faker"],
 	components: {
 		TeamMember: defineAsyncComponent(
 			() => import("@/components/TeamMember.vue")
@@ -88,16 +74,12 @@ export default defineComponent({
 	<section id="team" class="section">
 		<div class="title">L'équipe</div>
 		<div class="columns">
-			<div
-				class="column is-flex is-two-fifths"
-				v-for="(member, idx) in team"
-				:key="idx"
-			>
+			<div class="column is-flex is-two-fifths" v-for="i in 5" :key="i">
 				<TeamMember
-					:name="member.name"
-					:role="member.role"
-					:desc="member.desc"
-					:pp="member.pp"
+					:name="faker.name.firstName()"
+					:role="faker.name.jobTitle()"
+					:desc="faker.lorem.paragraph()"
+					:pp="faker.image.people(96, 96, true)"
 				/>
 			</div>
 		</div>
