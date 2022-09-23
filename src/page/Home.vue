@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
-
 const { faker } = await import("@faker-js/faker");
 
 faker.setLocale("fr");
@@ -16,6 +14,8 @@ const team = Array.from(Array(5)).map(() => {
 </script>
 
 <script lang="ts">
+import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
+
 export default defineComponent({
 	components: {
 		TeamMember: defineAsyncComponent(

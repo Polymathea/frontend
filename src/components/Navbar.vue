@@ -1,20 +1,12 @@
-<script lang="ts" setup>
-import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
-</script>
-
 <script lang="ts">
+import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 export default defineComponent({
 	data: () => ({
 		displayMenu: false,
-		displayLoginModal: false,
 	}),
-	methods: {
-		setDisplayLoginModal(b: boolean) {
-			this.displayLoginModal = b;
-		},
-	},
 	components: {
 		Logo: defineAsyncComponent(() => import("./SiteLogo.vue")),
+		Account: defineAsyncComponent(() => import("./Account.vue")),
 	},
 });
 </script>
@@ -64,64 +56,9 @@ export default defineComponent({
 
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons">
-						<a
-							class="button is-primary"
-							@click="setDisplayLoginModal(true)"
-						>
-							<strong>Log in / Sign up</strong>
-						</a>
-					</div>
+					<Account />
 				</div>
 			</div>
 		</div>
 	</nav>
-
-	<div class="modal" :class="{ 'is-active': displayLoginModal }">
-		<div
-			class="modal-background"
-			@click="setDisplayLoginModal(false)"
-		></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<div class="modal-card-title">Connectez-Vous</div>
-				<div class="delete" @click="setDisplayLoginModal(false)"></div>
-			</header>
-			<section class="modal-card-body">
-				<form
-					class="is-flex is-flex-direction-column is-justify-content-space-between"
-					id="loginForm"
-				>
-					<div id="email">
-						<label class="label" for="email">Courriel</label>
-						<input
-							class="input"
-							name="email"
-							type="email"
-							placeholder="nobody@example.org"
-						/>
-					</div>
-
-					<div id="password">
-						<label class="label" for="password">Mot de passe</label>
-						<input
-							class="input"
-							name="password"
-							type="password"
-							placeholder="1234"
-						/>
-					</div>
-				</form>
-			</section>
-			<footer class="modal-card-foot">
-				<button class="button is-primary">Save changes</button>
-				<button class="button">Cancel</button>
-			</footer>
-		</div>
-		<div
-			class="modal-close is-large"
-			aria-label="close"
-			@click="setDisplayLoginModal(false)"
-		></div>
-	</div>
 </template>
