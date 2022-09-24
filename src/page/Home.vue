@@ -79,15 +79,33 @@ export default defineComponent({
 					:name="faker.name.firstName()"
 					:role="faker.name.jobTitle()"
 					:desc="faker.lorem.paragraph()"
-					:pp="faker.image.people(96, 96, true)"
+					:pp="faker.image.avatar()"
 				/>
 			</div>
 		</div>
+		<nav
+			class="pagination is-centered is-rounded"
+			role="navigation"
+			aria-label="pagination"
+		>
+			<ul class="pagination-list">
+				<li>
+					<button class="pagination-previous icon is-clickable">
+						<i class="fa-solid fa-chevron-left" />
+					</button>
+				</li>
+				<li>
+					<button class="pagination-next icon is-clickable">
+						<i class="fa-solid fa-chevron-right" />
+					</button>
+				</li>
+			</ul>
+		</nav>
 	</section>
 </template>
 
 <style lang="scss">
-#team {
+#team > .columns {
 	overflow-x: scroll;
 }
 </style>

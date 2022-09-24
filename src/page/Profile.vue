@@ -6,32 +6,27 @@ export default defineComponent({
 </script>
 
 <template>
-	<div id="profile">
-		<div class="box has-background-white-bis">
-			<div>
-				<strong>Nom: </strong> {{ faker.name.lastName() }}
-			</div>
-			<div>
-				<strong>Prénom: </strong> {{ faker.name.firstName() }}
-			</div>
-			<div>
-				<strong>Téléphone: </strong> {{ faker.phone.number() }}
-			</div>
-			<div>
-				<strong>Courriel: </strong> {{ faker.internet.email() }}
+	<section class="section is-fullheight-with-navbar">
+		<div class="container">
+			<div id="profile" class="box has-background-white-bis">
+				<div><strong>Nom: </strong> {{ faker.name.lastName() }}</div>
+				<div>
+					<strong>Prénom: </strong> {{ faker.name.firstName() }}
+				</div>
+				<div>
+					<strong>Téléphone: </strong> {{ faker.phone.number() }}
+				</div>
+				<div>
+					<strong>Courriel: </strong> {{ faker.internet.email() }}
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <style lang="scss">
 #profile {
-	padding: 5%;
-}
-
-#profile > * {
-	width: 50%;
-	margin: auto;
+	margin: 5%;
 	padding: 2.5%;
 }
 </style>
