@@ -1,38 +1,44 @@
-<script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
+<script>
+import { defineComponent, defineAsyncComponent } from "@vue/runtime-core";
 
 export default defineComponent({
 	inject: ["faker"],
+	components: {
+		Image: defineAsyncComponent(() =>
+			import("@/components/ClickableImage.vue")
+		),
+		Checkbox: defineAsyncComponent(() =>
+			import("@/components/Checkbox.vue")
+		),
+	},
 });
 </script>
 
 <template>
 	<section class="hero container is-fullheight-with-navbar mt-6 mb-6">
-		<div class="box columns has-background-white-bis">
+		<div class="box columns has-background-white-bis is-vcentered">
 			<div class="column is-flex is-flex-direction-column">
-				<figure class="image">
-					<img :src="faker.image.technics()" alt="sujet" />
-				</figure>
-				<hr />
-				<p>
+				<Image
+					:src="faker.image.technics()"
+					:alt="faker.lorem.sentence()"
+				/>
+				<p class="block title is-4">
 					{{ faker.lorem.sentence() }}
 				</p>
-				<hr />
-				<p>
+				<p class="block">
 					{{ faker.lorem.paragraphs(2) }}
 				</p>
 			</div>
-			<div class="column">
-				<form>
-					<ul>
-						<li><input type="checkbox" />Choix 1</li>
-						<li><input type="checkbox" />Choix 2</li>
-						<li><input type="checkbox" />Choix 3</li>
-						<li><input type="checkbox" />Choix 4</li>
-					</ul>
+			<div class="column is-5">
+				<form class="block">
+					<Checkbox
+						:label="'Choix' + i"
+						:name="'choix' + i"
+						v-for="i in 4"
+						:key="i"
+					/>
 				</form>
-				<hr />
-				<div class="columns is-centered is-mobile">
+				<div class="block columns is-centered is-mobile">
 					<div class="column is-narrow m-0">
 						<button class="button is-warning">
 							<i class="fa-solid fa-chevron-left" />&nbsp;Previous
@@ -44,9 +50,8 @@ export default defineComponent({
 						</button>
 					</div>
 				</div>
-				<hr />
 				<progress
-					class="progress is-success is-large"
+					class="block progress is-success is-large"
 					:value="faker.mersenne.rand(0, 100)"
 					max="100"
 				>
@@ -56,5 +61,3 @@ export default defineComponent({
 		</div>
 	</section>
 </template>
-
-<style lang="scss"></style>

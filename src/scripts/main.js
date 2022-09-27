@@ -34,7 +34,7 @@ const router = createRouter({
 app.use(router);
 
 // faker
-const { faker } = await import("@faker-js/faker");
+import { faker } from "@faker-js/faker";
 faker.setLocale("fr");
 app.provide("faker", faker);
 

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 
 // permet à vite de découper les sources

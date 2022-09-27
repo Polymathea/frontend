@@ -1,11 +1,11 @@
-<script lang="ts">
+<script>
 import { defineAsyncComponent, defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
 	inject: ["faker"],
 	components: {
-		TeamMember: defineAsyncComponent(
-			() => import("@/components/TeamMember.vue")
+		TeamMember: defineAsyncComponent(() =>
+			import("@/components/TeamMember.vue")
 		),
 	},
 });

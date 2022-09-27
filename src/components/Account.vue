@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
@@ -6,7 +6,7 @@ export default defineComponent({
 		displayLoginModal: false,
 	}),
 	methods: {
-		setDisplayLoginModal(b: boolean) {
+		setDisplayLoginModal(b) {
 			this.displayLoginModal = b;
 		},
 	},

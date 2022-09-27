@@ -1,5 +1,5 @@
 /* eslint-env node */
-const IN_PRODUCTION = false && process.env.NODE_ENV === "production";
+const IN_PRODUCTION = process.env.NODE_ENV === "production";
 
 module.exports = {
 	plugins: [
